@@ -1,33 +1,17 @@
-import React from 'react';
-import UserProfile from './components/UserProfile';
-import UserStatus from './components/UserStatus';
-import UserActivity from './components/UserActivity';
+import { useState } from 'react'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
+import './App.css'
+import DisplayForm from './display'
 
 function App() {
-  const user = {
-    age: 30,
-    isMember: true,
-    memberSince: null,
-    status: "online",
-    activities: ['Logged in', 'Updated profile', 'Posted a comment']
-  };
+  const [count, setCount] = useState(0)
 
   return (
-    <div>
-      {/* <UserProfile age={user.age} isMember={user.isMember} memberSince={user.memberSince}/> */}
-
-      {user.isMember ? <p>Welcome back, member!</p> : <p>Please join us.</p>}
-
-      <UserProfile  profile={user}/>
-
-      <UserStatus status={user.status} />
-
-      <UserActivity activitie={user.activities} />
-
-      <h2>Learning React is fun!</h2>
-    </div>
-  );
+    <>
+      <DisplayForm/>
+    </>
+  )
 }
 
-export default App;
-
+export default App
